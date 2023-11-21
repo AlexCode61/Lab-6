@@ -1,12 +1,14 @@
 def spaces(string):
-    i = 0
-    _string_ = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-    while string[0] not in (_string_):
-        i += 1
-    _string = ''
-    for j in range(i,len(string)):
-        _string += string[i] 
-    return _string
+    index = 0
+    try:
+        while string[index] in ' ':
+            index += 1
+        new_string = ''
+        for i in range(index,len(string)):
+            new_string += string[i]
+        return new_string
+    except:
+        return ''
 
 def debil_guard_str(str:str):
     while True:
@@ -17,7 +19,7 @@ def debil_guard_str(str:str):
             break
         except:
             print('Введена пустая стока')
-    return string
+    return spaces(string)
 
 text = debil_guard_str('Введите текст -> ')
 count = 0
